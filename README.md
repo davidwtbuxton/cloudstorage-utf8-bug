@@ -5,6 +5,10 @@ The Google Cloud Storage docs say [object names can be UTF-8 encoded strings][na
 
 But the same code fails when running locally with the dev server. Tested with SDK 1.9.38.
 
+[This bug was recorded on the App Engine bug tracker][sdk-bug].
+
+Related to this is how the cloud storage client doesn't accept unicode strings when creating or listing or deleting an object, [but goes to the trouble of decoding object names from UTF-8 when listing the contents of a bucket][gcs-bug].
+
 
 Testing
 -------
@@ -33,7 +37,7 @@ Install requirements:
 
 Run the development server:
 
-    dev_appserver .
+    dev_appserver.py .
 
 Go to http://localhost:8080 in your browser.
 
@@ -44,3 +48,5 @@ Updated 20 July 2016
 [names]: https://cloud.google.com/storage/docs/naming#objectnames
 [github]: https://github.com/davidwtbuxton/cloudstorage-utf8-bug
 [appspot]: https://cloudstorage-utf8-bug-dot-davidwtbuxton-test.appspot.com/
+[sdk-bug]: https://code.google.com/p/googleappengine/issues/detail?id=13138
+[gcs-bug]: https://github.com/GoogleCloudPlatform/appengine-gcs-client/issues/39
