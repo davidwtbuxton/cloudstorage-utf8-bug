@@ -1,0 +1,6 @@
+*.pyc
+/cloudstorage/
+/bottle.py
+/mistune.py
+*.dist-info/
+*.egg-info/

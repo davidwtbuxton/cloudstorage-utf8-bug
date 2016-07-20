@@ -1,0 +1,19 @@
+application: davidwtbuxton-test
+version: cloudstorage-utf8-bug
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+  - url: /.*
+    script: wsgi.app
+
+skip_files:
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?\..*$
+
+  - ^(.*/)\.(dist|egg)-info/
