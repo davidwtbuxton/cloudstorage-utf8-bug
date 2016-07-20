@@ -30,6 +30,11 @@ Setup
 
 [Source code][github] is on GitHub.
 
+Check out the source:
+
+    git clone https://github.com/davidwtbuxton/cloudstorage-utf8-bug.git
+    cd cloudstorage-utf8-bug
+
 Install requirements:
 
     pip install --target . bottle==0.12.9 GoogleAppEngineCloudStorageClient==1.9.22.1
@@ -39,7 +44,7 @@ Run the development server:
 
     dev_appserver.py .
 
-Go to http://localhost:8080 in your browser.
+Go to http://localhost:8080 in your browser. Try creating an object with a UTF-8 encoded name by going to http://localhost:8080/create-utf-8 . It fails.
 
 
 Updated 20 July 2016
